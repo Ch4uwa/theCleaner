@@ -11,7 +11,7 @@ Game::Game()
 // Prints Menu
 void Game::PrintMenu()
 {
-	std::cout << " Where to look?\n"
+	std::cout << "Where to look?\n"
 		<< "\n"
 		<< "1. Storage\n"
 		<< "2. Office\n"
@@ -25,13 +25,14 @@ void Game::PrintMenu()
 int Game::getChoice()
 {
 	int choice;
-	std::cout << "Your choice: ";
+	std::cout << "\nYour choice: ";
 	while (!(std::cin >> choice))
 	{
 		std::cin.clear();
 		std::cin.ignore(100, '\n');
 		std::cout << "Your choice: ";
 	}
+	std::cout << "\n";
 	std::cin.ignore();
 	return choice;
 }
@@ -93,7 +94,7 @@ void Game::Inventory()
 {
 	const int x = 50;
 	int i = 0;
-	std::cout << "\n" << std::string(x, ' -') << "\n";
+	std::cout << "\n" << std::string(x, '-') << "\n";
 	std::cout << "Cleaning cart ==> ";
 	if (broom)
 	{
@@ -121,7 +122,7 @@ void Game::Inventory()
 		std::cout << vItems[5] << ", ";
 	}
 	std::cout << "\n" << i << " / " << (vItems.size()-1) << "\n";
-	std::cout << "\n" << std::string(x, ' -') << "\n";
+	std::cout << "\n" << std::string(x, '-') << "\n";
 }
 
 // Spawns item in random room.
